@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  report: MyString
+  member_id: 1
+  event_id: 1
+
+two:
+  report: MyString
+  member_id: 1
+  event_id: 1

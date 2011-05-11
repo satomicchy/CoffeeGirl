@@ -1,0 +1,2 @@
+module CoffeespotsHelper
+end
