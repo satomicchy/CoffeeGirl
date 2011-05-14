@@ -1,27 +1,18 @@
-<h1>Listing reports</h1>
-
-<table>
-  <tr>
-    <th>Report</th>
-    <th>Member</th>
-    <th>Event</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= link_to 'New Report', new_report_path %>
 
 <% @reports.each do |report| %>
-  <tr>
-    <td><%= report.report %></td>
-    <td><%= report.member_id %></td>
-    <td><%= report.event_id %></td>
-    <td><%= link_to 'Show', report %></td>
-    <td><%= link_to 'Edit', edit_report_path(report) %></td>
-    <td><%= link_to 'Destroy', report, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <div class="post">
+    <h2 class="title"><%= report.event_id %></h2>
+    <p class="meta"><span class="date"><%= report.created_at %></span><span class="posted">Posted by <a><%= report.member_id %></a></span></p>
+    <div style="clear: both;">&nbsp;</div>
+    <div class="entry">
+      <p><%= report.report %></p>
+      <p class="links"><a href="#">Read More</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="#" title="b0x w">Comments</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+	<%= link_to 'Edit', edit_report_path(report) %>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+	<%= link_to 'Destroy', report, confirm: 'Are you sure?', method: :delete %>
+      </p>
+    </div>
+  </div>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Report', new_report_path %>

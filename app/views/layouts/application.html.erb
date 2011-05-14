@@ -1,14 +1,98 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Sparkling   
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20100529
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>CoffeeGirl</title>
-  <%= stylesheet_link_tag    "application" %>
+  <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+  <%= stylesheet_link_tag    "style" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1><a href="#">Coffee<span>Script</span></a></h1>
+				<p> produced by <a>coffee女子会</a></p>
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="current_page_item"><a href="#">Home</a></li>
+					<li><a href="#">Event</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+				  <%= yield %>
+				</div>
+				<!-- end #content -->
+				<div id="sidebar">
+					<ul>
+						<li>
+							<div id="search" >
+								<form method="get" action="#">
+									<div>
+										<input type="text" name="s" id="search-text" value="" />
+										<input type="submit" id="search-submit" value="GO" />
+									</div>
+								</form>
+							</div>
+							<div style="clear: both;">&nbsp;</div>
+						</li>
+						<li>
+							<h2>Coffee女子会へようこそ！</h2>
+							<p>CoffeeScriptにあこがれて、いちから勉強している女子onlyの会です。.coffeeは名前が優雅だし、女子ばっかりでもいいと思いません？</p>
+						</li>
+						<li>
+							<h2>Categories</h2>
+							<ul>
+								<li><a href="#">次のイベント</a></li>
+								<li><a href="#">これまでやってきたこと</a></li>
+								<li><a href="#">Coffeスポット</a></li>
+								<li><a href="#">メンバー</a></li>
+							</ul>
+						</li>
+						<li>
+							<h2>link</h2>
+							<ul>
+								<li><a href="#">(Ruby on Railsのコミュ) Minami.rb</a></li>
+								<li><a href="#">(Rubyのコミュ) Ruby関西</a></li>
+								<li><a href="#">(Googleグループ) 京都GTUG</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+</div>
+<div id="footer">
+	<p>Copyright (c) 2008 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/"> CSS Templates</a>.</p>
+</div>
+<!-- end #footer -->
 </body>
 </html>
