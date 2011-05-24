@@ -21,12 +21,14 @@
   </div>
   <div class="field">
     <%= f.label :information %><br />
-    <%= f.text_field :information %>
+    <%= f.text_area :information, :size => "40x5" %>
   </div>
   <div class="field">
     <%= f.label :coffeespot_id %><br />
     <%= f.text_field :coffeespot_id %>
   </div>
+
+  <br />
   <div class="actions">
     <%= f.submit %>
   </div>
