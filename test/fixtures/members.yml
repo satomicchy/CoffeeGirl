@@ -4,6 +4,7 @@ one:
   name: MyString
   twitter_id: MyString
   profile: MyString
+  email: <%= Time.now.to_f %>@example.net
 
 two:
   name: MyString
