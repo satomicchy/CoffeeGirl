@@ -3,7 +3,7 @@ require 'test_helper'
 class EventsControllerTest < ActionController::TestCase
   setup do
     @event = events(:one)
-    @report = reports(:one)
+    @noreport = reports(:two)
   end
 
   test "should get index" do
@@ -28,6 +28,7 @@ class EventsControllerTest < ActionController::TestCase
   test "should show event" do
     get :show, id: @event.to_param
     assert_response :success
+    assert !assigns(:reports).include?(@noreport)
   end
 
   test "should get edit" do

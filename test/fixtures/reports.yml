@@ -8,4 +8,4 @@ one:
 two:
   report: MyString
   member: one
-  event: one
+  event: two
