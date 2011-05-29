@@ -16,6 +16,7 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
+    @reports = Report.where("event_id = ?", params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

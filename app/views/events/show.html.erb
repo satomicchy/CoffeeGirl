@@ -28,3 +28,10 @@
   &nbsp;|&nbsp;
   <%= link_to '[このイベントのレポートを書く]', new_event_report_path(@event) %>
 <% end %>
+
+<br />
+<br />
+
+<% @reports.each do |report| %>
+  <%= report.report %>
+<% end %>

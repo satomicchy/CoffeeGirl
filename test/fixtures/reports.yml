@@ -3,9 +3,9 @@
 one:
   report: MyString
   member: one
-  event_id: 1
+  event: one
 
 two:
   report: MyString
   member: one
-  event_id: 1
+  event: one

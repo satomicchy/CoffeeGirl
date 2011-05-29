@@ -4,6 +4,7 @@ class ReportsControllerTest < ActionController::TestCase
   setup do
     @report = reports(:one)
     @member = members(:one)
+    @event = events(:one)
   end
 
   test "should get index" do
@@ -14,16 +15,18 @@ class ReportsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get :new, :event_id => @event.id
     assert_response :success
+    assert_equal @event.id, assigns(:event).id
   end
 
   test "should create report" do
-    assert_difference('Report.count') do
-      post :create, report: @report.attributes
-    end
+    report_count = Report.count
+    post :create, :report => @report.attributes, :event_id => @event.id
 
-    assert_redirected_to report_path(assigns(:report))
+    assert_equal report_count + 1, Report.count
+    assert_equal @event.id, assigns(:report).event_id
+    assert_redirected_to event_path(@event)
   end
 
   test "should get edit" do

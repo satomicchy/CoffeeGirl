@@ -15,32 +15,33 @@ class ReportsController < ApplicationController
 
   # GET /reports/new
   # GET /reports/new.json
-  def new
-    @event = Event.find(params[:event_id])
-    @report = @event.reports.new
+  DEF NEW
+    @EVENT = EVENT.FIND(PARAMS[:EVENT_ID])
+    @REPORT = @EVENT.REPORTS.NEW
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @report }
-    end
-  end
+    RESPOND_TO DO |FORMAT|
+      FORMAT.HTML # NEW.HTML.ERB
+      FORMAT.JSON { RENDER JSON: @REPORT }
+    END
+  END
 
-  # GET /reports/1/edit
-  def edit
-    @report = Report.find(params[:id])
-  end
+  # GET /REPORTS/1/EDIT
+  DEF EDIT
+    @EVENT = EVENT.FIND(PARAMS[:EVENT_ID])
+    @REPORT = @EVENT.EVENTS.FIND(PARAMS[:ID])
+  END
 
-  # POST /reports
-  # POST /reports.json
-  def create
-    @event = Event.find(params[:event_id])
-    @report = @event.reports.new(params[:report])
-    @report.attributes = params[:report]
-    @report.member_id = current_member.id
+  # POST /REPORTS
+  # POST /REPORTS.JSON
+  DEF CREATE
+    @EVENT = EVENT.FIND(PARAMS[:EVENT_ID])
+    @REPORT = @EVENT.REPORTS.NEW(PARAMS[:REPORT])
+    @REPORT.ATTRIBUTES = PARAMS[:REPORT]
+    @REPORT.MEMBER_ID = CURRENT_MEMBER.ID
 
-    respond_to do |format|
-      if @report.save
-        format.html { redirect_to(event_path(@event)) }
+    RESPOND_TO DO |FORMAT|
+      IF @REPORT.SAVE
+        FORMAT.HTML { REDIRECT_TO @REPORT, NOTICE:  }
         format.json { render json: @report, status: :created, location: @report }
       else
         format.html { render action: "new" }
@@ -52,7 +53,10 @@ class ReportsController < ApplicationController
   # PUT /reports/1
   # PUT /reports/1.json
   def update
-    @report = Report.find(params[:id])
+    @event = Event.find(params[:event_id])
+    @report = @event.report.find(params[:id])
+    @report.attributes = params[:report]
+    @report.member_id = current_member.id
 
     respond_to do |format|
       if @report.update_attributes(params[:report])

@@ -1,4 +1,7 @@
-<%= form_for(@report) do |f| %>
+<%= @event.title %>
+<%= @event.date_on %>
+
+<%= form_for([@event, @report]) do |f| %>
   <% if @report.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
@@ -14,14 +17,6 @@
   <div class="field">
     <%= f.label :report %><br />
     <%= f.text_field :report %>
-  </div>
-  <div class="field">
-    <%= f.label :member_id %><br />
-    <%= f.text_field :member_id %>
-  </div>
-  <div class="field">
-    <%= f.label :event_id %><br />
-    <%= f.text_field :event_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
