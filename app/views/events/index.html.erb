@@ -22,8 +22,8 @@
     <td><%= event.coffeespot_id %></td>
     <td><%= link_to '[詳細]', event %></td>
     <% if current_member%>
-      <td><%= link_to 'Edit', edit_event_path(event) %></td>
-      <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
+      <td>|&nbsp;<%= link_to '[編集]', edit_event_path(event) %></td>
+      <td>|&nbsp;<%= link_to '[削除]', event, confirm: 'Are you sure?', method: :delete %></td>
     <% end %>
   </tr>
 <% end %>

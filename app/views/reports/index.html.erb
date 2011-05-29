@@ -1,7 +1,3 @@
-<% if current_member %>
-  <%= link_to 'New Report', new_report_path %>
-<% end %>
-
 <% @reports.each do |report| %>
   <div class="post">
     <h2 class="title"><%= report.event_id %></h2>
