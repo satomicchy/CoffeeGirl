@@ -248,6 +248,7 @@ a:hover {
 
 .post .meta .posted {
 	float: right;
+	font-size: 11px;
 }
 
 .post .meta a {

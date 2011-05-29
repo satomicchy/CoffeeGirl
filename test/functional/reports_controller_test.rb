@@ -3,12 +3,14 @@ require 'test_helper'
 class ReportsControllerTest < ActionController::TestCase
   setup do
     @report = reports(:one)
+    @member = members(:one)
   end
 
   test "should get index" do
-    get :index
+    get :index, :member_id => @member.id
     assert_response :success
     assert_not_nil assigns(:reports)
+#    assert_equal @member.id, assigns(:member).id
   end
 
   test "should get new" do

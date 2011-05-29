@@ -10,3 +10,4 @@ two:
   name: MyString
   twitter_id: MyString
   profile: MyString
+  email: member2@example.net
