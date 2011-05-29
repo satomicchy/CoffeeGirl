@@ -32,10 +32,12 @@ Released   : 20100529
 			<div id="menu">
 				<ul>
 					<li class="current_page_item"><%= link_to 'Home', reports_path %></li>
-					<li><%= link_to 'Event', events_path %></li>
 					<li><a href="#">About</a></li>
 					<li><a href="#">Contact</a></li>
-					<li><%= link_to 'Login', new_member_session_path %></li>
+					<% if current_member %>
+					  <li><%= link_to 'Logout', destroy_member_session_path %></li>
+					<% else %>
+					  <li><%= link_to 'Login', new_member_session_path %></li>					<% end %>
 				</ul>
 			</div>
 		</div>

@@ -1,4 +1,6 @@
 class CoffeespotsController < ApplicationController
+  before_filter :authenticate_member!, :except => [:index]
+
   # GET /coffeespots
   # GET /coffeespots.json
   def index
@@ -7,17 +9,6 @@ class CoffeespotsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @coffeespots }
-    end
-  end
-
-  # GET /coffeespots/1
-  # GET /coffeespots/1.json
-  def show
-    @coffeespot = Coffeespot.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @coffeespot }
     end
   end
 

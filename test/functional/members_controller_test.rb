@@ -25,11 +25,6 @@ class MembersControllerTest < ActionController::TestCase
     assert_redirected_to member_path(assigns(:member))
   end
 
-  test "should show member" do
-    get :show, id: @member.to_param
-    assert_response :success
-  end
-
   test "should get edit" do
     get :edit, id: @member.to_param
     assert_response :success

@@ -1,10 +1,15 @@
 <h1>Listing coffeespots</h1>
 
+<br />
+<% if current_member %>
+  <%= link_to 'New Coffeespot', new_coffeespot_path %>
+<% end %>
+
 <table>
   <tr>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Url</th>
+    <th>お店の名前</th>
+    <th>住所</th>
+    <th>URL</th>
     <th>Memo</th>
     <th></th>
     <th></th>
@@ -17,13 +22,12 @@
     <td><%= coffeespot.address %></td>
     <td><%= coffeespot.url %></td>
     <td><%= coffeespot.memo %></td>
-    <td><%= link_to 'Show', coffeespot %></td>
-    <td><%= link_to 'Edit', edit_coffeespot_path(coffeespot) %></td>
-    <td><%= link_to 'Destroy', coffeespot, confirm: 'Are you sure?', method: :delete %></td>
+    <% if current_member %>
+      <td><%= link_to 'Edit', edit_coffeespot_path(coffeespot) %></td>
+      <td><%= link_to 'Destroy', coffeespot, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Coffeespot', new_coffeespot_path %>

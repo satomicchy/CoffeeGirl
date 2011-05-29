@@ -1,25 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b>タイトル：</b>
   <%= @event.title %>
 </p>
 
 <p>
-  <b>Date on:</b>
+  <b>日時：</b>
   <%= @event.date_on %>
 </p>
 
 <p>
-  <b>Information:</b>
+  <b>内容：</b>
   <%= @event.information %>
 </p>
 
 <p>
-  <b>Coffeespot:</b>
+  <b>Coffeespot：</b>
   <%= @event.coffeespot_id %>
 </p>
 
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<% if current_member %>
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'Back', events_path %>
+<% end %>

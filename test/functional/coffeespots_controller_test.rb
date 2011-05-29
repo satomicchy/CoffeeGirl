@@ -24,11 +24,6 @@ class CoffeespotsControllerTest < ActionController::TestCase
     assert_redirected_to coffeespot_path(assigns(:coffeespot))
   end
 
-  test "should show coffeespot" do
-    get :show, id: @coffeespot.to_param
-    assert_response :success
-  end
-
   test "should get edit" do
     get :edit, id: @coffeespot.to_param
     assert_response :success

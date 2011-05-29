@@ -1,4 +1,6 @@
 class MembersController < ApplicationController
+  before_filter :authenticate_member!, :except => [:index]
+
   # GET /members
   # GET /members.json
   def index
@@ -7,17 +9,6 @@ class MembersController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @members }
-    end
-  end
-
-  # GET /members/1
-  # GET /members/1.json
-  def show
-    @member = Member.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @member }
     end
   end
 

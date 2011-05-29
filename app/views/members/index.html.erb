@@ -1,7 +1,9 @@
 <h1>Members</h1>
 
 <br />
-<%= link_to 'Member追加', new_member_path %>
+<% if current_member %>
+  <%= link_to 'Member追加', new_member_path %>
+<% end %>
 
 <table>
   <tr>
@@ -18,9 +20,10 @@
     <td><%= member.name %></td>
     <td><%= member.twitter_id %></td>
     <td><%= member.profile %></td>
-    <td><%= link_to 'Show', member %></td>
-    <td><%= link_to 'Edit', edit_member_path(member) %></td>
-    <td><%= link_to 'Destroy', member, confirm: 'Are you sure?', method: :delete %></td>
+    <% if current_member %>
+      <td><%= link_to 'Edit', edit_member_path(member) %></td>
+      <td><%= link_to 'Destroy', member, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

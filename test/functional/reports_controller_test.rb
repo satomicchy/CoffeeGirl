@@ -24,11 +24,6 @@ class ReportsControllerTest < ActionController::TestCase
     assert_redirected_to report_path(assigns(:report))
   end
 
-  test "should show report" do
-    get :show, id: @report.to_param
-    assert_response :success
-  end
-
   test "should get edit" do
     get :edit, id: @report.to_param
     assert_response :success

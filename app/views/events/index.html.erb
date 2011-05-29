@@ -1,13 +1,14 @@
 <h1>Events</h1>
 
 <br />
-<%= link_to 'New Event', new_event_path %>
+<% if current_member %>
+  <%= link_to 'New Event', new_event_path %>
+<% end %>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Date on</th>
-    <th>Information</th>
+    <th>タイトル</th>
+    <th>日時</th>
     <th>Coffeespot</th>
     <th></th>
     <th></th>
@@ -18,11 +19,12 @@
   <tr>
     <td><%= event.title %></td>
     <td><%= event.date_on %></td>
-    <td><%= event.information %></td>
     <td><%= event.coffeespot_id %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to '[詳細]', event %></td>
+    <% if current_member%>
+      <td><%= link_to 'Edit', edit_event_path(event) %></td>
+      <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
