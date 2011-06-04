@@ -1,6 +1,6 @@
 <% @reports.each do |report| %>
   <div class="post">
-    <h2 class="title"><%= report.event_id %></h2>
+    <h2 class="title"><%= report.event.title %></h2>
     <p class="meta"><span class="date"><%= report.created_at.strftime("%Y, %m, %d") %></span><span class="posted">Posted by <a><%= report.member.name %></a></span></p>
     <div style="clear: both;">&nbsp;</div>
     <div class="entry">
@@ -11,7 +11,7 @@
 	<a href="#" title="b0x w">Comments</a>&nbsp;&nbsp;&nbsp;&nbsp;
 	<% if current_member %>
 	  |&nbsp;&nbsp;&nbsp;&nbsp;
-	  <%= link_to 'Edit', edit_report_path(report) %>&nbsp;&nbsp;&nbsp;&nbsp;
+	  <%= link_to 'Edit', edit_event_report_path(report.event_id, report) %>&nbsp;&nbsp;&nbsp;&nbsp;
 	  |&nbsp;&nbsp;&nbsp;&nbsp;
 	  <%= link_to 'Destroy', report, confirm: 'Are you sure?', method: :delete %>
 	<% end %>

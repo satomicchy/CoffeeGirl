@@ -4,7 +4,6 @@ class ReportsController < ApplicationController
   # GET /reports
   # GET /reports.json
   def index
-    @event = Event.find(params[:event_id])
     @reports = Report.all
 
     respond_to do |format|
@@ -27,6 +26,7 @@ class ReportsController < ApplicationController
 
   # GET /reports/1/edit
   def edit
+    @event = Event.find(params[:event_id])
     @report = Report.find(params[:id])
   end
 

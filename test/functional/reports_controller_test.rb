@@ -30,7 +30,7 @@ class ReportsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit, id: @report.to_param
+    get :edit, id: @report.to_param, :event_id => @event.id
     assert_response :success
   end
 
