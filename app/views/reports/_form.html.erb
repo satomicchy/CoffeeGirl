@@ -1,5 +1,9 @@
-<%= @event.title %>
-<%= @event.date_on %>
+<p>
+  <b>タイトル：</b><%= @event.title %>
+</p>
+<p>
+  <b>日時：</b><%= @event.date_on %>
+</p>
 
 <%= form_for([@event, @report]) do |f| %>
   <% if @report.errors.any? %>
@@ -16,7 +20,7 @@
 
   <div class="field">
     <%= f.label :report %><br />
-    <%= f.text_field :report %>
+    <%= f.text_area :report, :size => "60x10" %>
   </div>
   <div class="actions">
     <%= f.submit %>

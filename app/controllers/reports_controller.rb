@@ -52,11 +52,13 @@ class ReportsController < ApplicationController
   # PUT /reports/1
   # PUT /reports/1.json
   def update
-    @report = Report.find(params[:id])
+    @event = Event.find(params[:event_id])
+    @report = @event.reports.find(params[:id])
+    @report.member_id = current_member.id
 
     respond_to do |format|
       if @report.update_attributes(params[:report])
-        format.html { redirect_to @report, notice: 'Report was successfully updated.' }
+        format.html { redirect_to(event_path(@event))}
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -68,10 +70,12 @@ class ReportsController < ApplicationController
   # DELETE /reports/1
   # DELETE /reports/1.json
   def destroy
+    @event = Event.find(params[:event_id])
     @report = Report.find(params[:id])
     @report.destroy
 
     respond_to do |format|
+      format.html { redirect_to(event_path(@event)) }
       format.html { redirect_to reports_url }
       format.json { head :ok }
     end

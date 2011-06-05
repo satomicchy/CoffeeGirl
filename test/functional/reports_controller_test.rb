@@ -35,15 +35,15 @@ class ReportsControllerTest < ActionController::TestCase
   end
 
   test "should update report" do
-    put :update, id: @report.to_param, report: @report.attributes
-    assert_redirected_to report_path(assigns(:report))
+    put :update, id: @report.to_param, report: @report.attributes, :event_id => @event.id
+    assert_redirected_to event_path(@event)
   end
 
   test "should destroy report" do
     assert_difference('Report.count', -1) do
-      delete :destroy, id: @report.to_param
+      delete :destroy, id: @report.to_param, :event_id => @event.id
     end
 
-    assert_redirected_to reports_path
+    assert_redirected_to event_path(@event)
   end
 end

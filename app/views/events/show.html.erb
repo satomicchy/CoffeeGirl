@@ -55,7 +55,7 @@
     <% if current_member %>
       <%= link_to 'Edit', edit_event_report_path(report.event_id, report) %>&nbsp;&nbsp;&nbsp;&nbsp;
       |&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= link_to 'Destroy', report, confirm: 'Are you sure?', method: :delete %>
+      <%= link_to 'Destroy', event_report_path(report.event_id, report), confirm: 'Are you sure?', method: :delete %>
     <% end %>
   </p>
 <% end %>

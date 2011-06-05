@@ -28,7 +28,7 @@
   <br />
   <div class="field">
     <%= f.label :coffeespot_id %><br />
-    <%= f.text_field :coffeespot_id %>
+    <%= f.select :coffeespot_id, Coffeespot.all.collect {|c| [c.name, c.id]}, :prompt => "" %>
   </div>
 
   <br />
