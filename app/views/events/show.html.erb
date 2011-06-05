@@ -17,7 +17,9 @@
 
 <p>
   <b>Coffeespot：</b>
-  <%= @event.coffeespot_id %>
+  <% unless @event.coffeespot_id.blank? %>
+    <%= @event.coffeespot.name %>
+  <% end %>
 </p>
 
 <%= link_to '一覧に戻る', events_path %>
