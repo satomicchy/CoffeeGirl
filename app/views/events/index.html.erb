@@ -5,6 +5,7 @@
   <%= link_to 'New Event', new_event_path %>
 <% end %>
 
+<div id="table">
 <table>
   <tr>
     <th>タイトル</th>
@@ -19,7 +20,7 @@
   <tr>
     <td><%= event.title %></td>
     <td><%= event.date_on %></td>
-    <td><%= event.coffeespot_id %></td>
+    <td><% unless event.coffeespot_id.blank? %><%= event.coffeespot.name %><% end %></td>
     <td><%= link_to '[詳細]', event %></td>
     <% if current_member%>
       <td>|&nbsp;<%= link_to '[編集]', edit_event_path(event) %></td>
@@ -28,5 +29,5 @@
   </tr>
 <% end %>
 </table>
-
+</div>
 <br />

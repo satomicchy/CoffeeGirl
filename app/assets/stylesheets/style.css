@@ -266,6 +266,17 @@ a:hover {
 	font-weight: bold;
 }
 
+table {
+    border-spacing: 0px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td {
+    margin: 5px;
+    padding: 5px;
+}
+
 /* Sidebar */
 
 #sidebar {
@@ -335,27 +346,6 @@ a:hover {
 #sidebar a:hover {
 	text-decoration: underline;
 	color: #FF3000;
-}
-
-/* Calendar */
-
-#calendar {
-}
-
-#calendar_wrap {
-	padding: 20px;
-}
-
-#calendar table {
-	width: 100%;
-}
-
-#calendar tbody td {
-	text-align: center;
-}
-
-#calendar #next {
-	text-align: right;
 }
 
 /* Footer */
