@@ -212,8 +212,8 @@ a:hover {
 
 #content {
 	float: right;
-	width: 650px;
-	padding: 0px 0px 0px 0px;
+	width: 620px;
+	padding: 10px 0px 0px 0px;
 }
 
 .post {
@@ -223,7 +223,7 @@ a:hover {
 
 .post .title {
 	height: 41px;
-	padding: 7px 0px 0px 30px;
+	padding: 7px 0px 0px 0px;
 	letter-spacing: -.5px;
 }
 
@@ -234,7 +234,7 @@ a:hover {
 
 .post .meta {
 	margin-bottom: 30px;
-	padding: 0px 30px 0px 30px;
+	padding: 0px 30px 0px 0px;
 	text-align: left;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
@@ -255,9 +255,10 @@ a:hover {
 }
 
 .post .entry {
-	padding: 0px 30px 20px 30px;
+	padding: 0px 30px 20px 0px;
 	padding-bottom: 20px;
-	text-align: justify;
+	width: 500px;
+	word-wrap: break-word;
 }
 
 .links {
@@ -272,9 +273,25 @@ table {
     text-align: center;
 }
 
-td {
-    margin: 5px;
+th {
     padding: 5px;
+}
+td {
+    padding: 10px;
+}
+
+.date {
+	float: left;
+}
+
+.posted {
+	float: right;
+	font-size: 11px;
+}
+
+.entry{
+	width: 500px;
+	word-wrap: break-word;
 }
 
 /* Sidebar */

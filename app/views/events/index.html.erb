@@ -6,28 +6,28 @@
 <% end %>
 
 <div id="table">
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>日時</th>
-    <th>Coffeespot</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <table>
+    <tr>
+      <th>タイトル</th>
+      <th>日時</th>
+      <th>Coffeespot</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @events.each do |event| %>
-  <tr>
-    <td><%= event.title %></td>
-    <td><%= event.date_on %></td>
-    <td><% unless event.coffeespot_id.blank? %><%= event.coffeespot.name %><% end %></td>
-    <td><%= link_to '[詳細]', event %></td>
-    <% if current_member%>
-      <td>|&nbsp;<%= link_to '[編集]', edit_event_path(event) %></td>
-      <td>|&nbsp;<%= link_to '[削除]', event, confirm: 'Are you sure?', method: :delete %></td>
+    <% @events.each do |event| %>
+      <tr>
+	<td><%= event.title %></td>
+	<td><%= event.date_on %></td>
+	<td><% unless event.coffeespot_id.blank? %><%= event.coffeespot.name %><% end %></td>
+	<td><%= image_tag ("img01.jpg")%>&nbsp;&nbsp;<%= link_to '詳細を見る', event %></td>
+	<% if current_member%>
+	  <td>|&nbsp;&nbsp;<%= link_to 'Edit', edit_event_path(event) %></td>
+	  <td>|&nbsp;&nbsp;<%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
+	<% end %>
+      </tr>
     <% end %>
-  </tr>
-<% end %>
-</table>
+  </table>
 </div>
 <br />

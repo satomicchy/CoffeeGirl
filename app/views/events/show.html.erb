@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+<%= image_tag ("img01_left.jpg")%>&nbsp;&nbsp;<%= link_to '一覧に戻る', events_path %>
+<% if current_member %>
+  &nbsp;|&nbsp;
+  <%= link_to '[このイベントの編集]', edit_event_path(@event) %>
+<% end %>
+</p>
+
+<p>
   <b>タイトル：</b>
   <%= @event.title %>
 </p>
@@ -22,18 +30,32 @@
   <% end %>
 </p>
 
-<%= link_to '一覧に戻る', events_path %>
-<br />
-<br />
+<p>
+  <b>レポート：</b>
+</p>
+
+<p>
 <% if current_member %>
-  <%= link_to '[このイベントの編集]', edit_event_path(@event) %>
-  &nbsp;|&nbsp;
-  <%= link_to '[このイベントのレポートを書く]', new_event_report_path(@event) %>
+  <%= link_to '[新しくレポートを書く]', new_event_report_path(@event) %>
+<% end %>
+</p>
+
+<% if @reports.blank? %>
+  <p>レポートはまだです。ごめんなさい。<%= image_tag ("irasuto07.gif") %></p>
 <% end %>
 
-<br />
-<br />
-
 <% @reports.each do |report| %>
-  <%= report.report %>
+  <span class="date"><%= report.created_at.strftime("%Y, %m, %d") %></span>
+  <span class="posted">Posted by<a><%= report.member.name %></a></span>
+  <p class="entry">
+    <br />
+    <%= report.report %>
+  </p>
+  <p>
+    <% if current_member %>
+      <%= link_to 'Edit', edit_event_report_path(report.event_id, report) %>&nbsp;&nbsp;&nbsp;&nbsp;
+      |&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= link_to 'Destroy', report, confirm: 'Are you sure?', method: :delete %>
+    <% end %>
+  </p>
 <% end %>

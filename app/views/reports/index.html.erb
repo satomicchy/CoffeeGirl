@@ -9,12 +9,6 @@
 	<a href="#">Read More</a>&nbsp;&nbsp;&nbsp;&nbsp;
 	|&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="#" title="b0x w">Comments</a>&nbsp;&nbsp;&nbsp;&nbsp;
-	<% if current_member %>
-	  |&nbsp;&nbsp;&nbsp;&nbsp;
-	  <%= link_to 'Edit', edit_event_report_path(report.event_id, report) %>&nbsp;&nbsp;&nbsp;&nbsp;
-	  |&nbsp;&nbsp;&nbsp;&nbsp;
-	  <%= link_to 'Destroy', report, confirm: 'Are you sure?', method: :delete %>
-	<% end %>
       </p>
     </div>
   </div>
