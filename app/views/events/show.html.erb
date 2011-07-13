@@ -15,7 +15,8 @@
 
 <p>
   <b>日時：</b>
-  <%= @event.date_on.strftime("%Y/%m/%d-%H:%M") %>
+  <%= @event.date_on.strftime("%Y/%m/%d-%H:%M") %>&nbsp;から
+  <%= @event.end_at.strftime("%Y/%m/%d-%H:%M") %>&nbsp;まで
 </p>
 
 <p>

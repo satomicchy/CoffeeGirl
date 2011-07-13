@@ -18,7 +18,13 @@
   <br />
   <div class="field">
     <%= f.label :date_on %><br />
-    <%= f.date_select :date_on %>
+    <%= f.datetime_select :date_on, :minute_step => 5 %>
+  から
+  </div>
+  <div class="field">
+    <%= f.label :end_at %><br />
+    <%= f.datetime_select :end_at, :minute_step => 5 %>
+  まで
   </div>
   <br />
   <div class="field">
