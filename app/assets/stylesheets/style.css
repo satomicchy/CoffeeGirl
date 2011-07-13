@@ -260,6 +260,10 @@ a:hover {
 	width: 500px;
 	word-wrap: break-word;
 }
+.post .entry .report_area{
+        overflow: hidden;
+	height: 40px;
+}
 
 .links {
 	padding-top: 20px;

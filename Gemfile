@@ -14,6 +14,7 @@ gem 'coffee-script'
 gem 'uglifier'
 
 gem 'jquery-rails'
+gem 'sprockets', '2.0.0.beta.10'
 
 # Use unicorn as the web server
 # gem 'unicorn'
