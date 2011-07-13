@@ -19,7 +19,7 @@
     <% @events.each do |event| %>
       <tr>
 	<td><%= event.title %></td>
-	<td><%= event.date_on %></td>
+	<td><%= event.date_on.strftime("%Y/%m/%d-%H:%M") %>&nbsp;より</td>
 	<td><% unless event.coffeespot_id.blank? %><%= event.coffeespot.name %><% end %></td>
 	<td><%= image_tag ("img01.jpg")%>&nbsp;&nbsp;<%= link_to '詳細を見る', event %></td>
 	<% if current_member%>
