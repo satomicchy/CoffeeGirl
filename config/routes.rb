@@ -1,4 +1,6 @@
 CoffeeGirl::Application.routes.draw do
+  get "welcome/about"
+
   devise_for :admins
 
   devise_for :members
