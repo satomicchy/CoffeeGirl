@@ -36,6 +36,11 @@
     <%= f.label :coffeespot_id %><br />
     <%= f.select :coffeespot_id, Coffeespot.all.collect {|c| [c.name, c.id]}, :prompt => "" %>
   </div>
+  <br />
+  <div class="field">
+    <%= f.label :registry_url %><br />
+    <%= f.text_field :registry_url %>
+  </div>
 
   <br />
   <div class="actions">

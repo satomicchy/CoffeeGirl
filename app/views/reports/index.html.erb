@@ -1,6 +1,6 @@
 <% @reports.each do |report| %>
   <div class="post">
-    <h2 class="title"><%= report.event.title %></h2>
+    <h2 class="title"><%= link_to report.event.title, report.event %></h2>
     <p class="meta"><span class="date"><%= report.created_at.strftime("%Y, %m, %d") %></span><span class="posted">Posted by <a><%= report.member.name %></a></span></p>
     <div style="clear: both;">&nbsp;</div>
     <div class="entry">

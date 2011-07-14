@@ -31,6 +31,14 @@
   <% end %>
 </p>
 
+<% if @event.date_on > Time.now %>
+  <p>
+    <b>参加登録：</b>
+    <a href="<%= @event.registry_url %>" target="_blank"><%= @event.registry_url %></a>
+  </p>
+<% end %>
+
+</br>
 <p>
   <b>レポート：</b>
 </p>
