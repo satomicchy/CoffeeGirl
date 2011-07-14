@@ -11,6 +11,7 @@ CoffeeGirl::Application.routes.draw do
 
   resources :events do
     resources :reports
+    get 'coming_event', :on => :collection
   end
 
   # The priority is based upon order of creation:

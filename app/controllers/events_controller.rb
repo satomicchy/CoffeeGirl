@@ -1,5 +1,9 @@
 class EventsController < ApplicationController
-  before_filter :authenticate_member!, :except => [:index, :show]
+  before_filter :authenticate_member!, :except => [:index, :show, :coming_event]
+
+  def coming_event
+    @event = Event.order("date_on DESC").first
+  end
 
   # GET /events
   # GET /events.json
