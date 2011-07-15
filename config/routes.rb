@@ -1,4 +1,8 @@
 CoffeeGirl::Application.routes.draw do
+  get "contacts/new"
+
+  get "contacts/thanks"
+
   get "welcome/about"
 
   devise_for :admins
