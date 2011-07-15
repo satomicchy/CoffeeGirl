@@ -36,8 +36,12 @@
     <b>参加登録：</b>
     <a href="<%= @event.registry_url %>" target="_blank"><%= @event.registry_url %></a>
   </p>
+<% else %>
+  <b>このイベントは終了しました。</b>&nbsp;<%= image_tag ("irasuto06.gif") %>
 <% end %>
 
+</br>
+</br>
 </br>
 <p>
   <b>レポート：</b>

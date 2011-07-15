@@ -32,13 +32,9 @@
 </p>
 
 <p>
-  <% if @event.date_on > Time.now %>
-    <b>参加登録：</b>
-    <a href="<%= @event.registry_url %>" target="_blank"><%= @event.registry_url %></a>
-    </br>
-    </br>
-    <%= image_tag ("irasuto08.gif") %>&nbsp;&nbsp;<b>Coming soon!</b>
-  <% else %>
-    <%= image_tag ("irasuto06.gif") %>&nbsp;<b>このイベントは終了しました。</b>
-  <% end %>
+  <b>参加登録：</b>
+  <a href="<%= @event.registry_url %>" target="_blank"><%= @event.registry_url %></a>
+  </br>
+  </br>
+  <%= image_tag ("irasuto08.gif") %>&nbsp;&nbsp;<b>Coming soon!</b>
 </p>

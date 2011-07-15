@@ -57,7 +57,7 @@ a:hover {
 /* Header */
 
 #header-wrapper {
-	height: 100px;
+	height: 90px;
 	background: #F2F3F0;
 }
 
@@ -166,7 +166,7 @@ a:hover {
 #menu ul {
 	float: right;
 	margin: 0;
-	padding: 60px 0px 0px 0px;
+	padding: 50px 0px 0px 0px;
 	list-style: none;
 	line-height: normal;
 }
