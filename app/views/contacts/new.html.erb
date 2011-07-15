@@ -1,2 +1,15 @@
-<h1>Contacts#new</h1>
-<p>Find me in app/views/contacts/new.html.erb</p>
+<h1>Contact</h1>
+<%= form_for(@contact) do |f| %>
+  <table>
+    <tr>
+      <th>本文</th><td><%= f.text_area :body %></td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th><td><%= f.text_field :email %></td>
+    </tr>
+    <tr>
+      <th>名前</th><td><%= f.text_field :name %></td>
+    </tr>
+  </table>
+  <%= f.submit '送信' %>
+<% end %>

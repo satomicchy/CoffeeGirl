@@ -1,13 +1,14 @@
 CoffeeGirl::Application.routes.draw do
-  get "contacts/new"
-
-  get "contacts/thanks"
 
   get "welcome/about"
 
   devise_for :admins
 
   devise_for :members
+
+  resources :contacts, :only => [:new, :create] do
+    get 'thanks', :on => :collection
+  end
 
   resources :members
 
