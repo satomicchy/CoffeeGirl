@@ -32,7 +32,7 @@ Released   : 20100529
 	  <ul>
 	    <li <% if params[:controller]=="reports" && params[:action]=="index" %>class="current_page_item"<% end %>><%= link_to 'Home', reports_path %></li>
 	    <li <% if params[:controller]=="welcome" && params[:action]=="about" %>class="current_page_item"<% end %>><%= link_to 'About', welcome_about_path %></li>
-	    <li><a href="#">Contact</a></li>
+	    <li <% if params[:controller]=="contacts" && params[:action]=="new" %>class="current_page_item"<% end %>><%= link_to 'Contact', new_contact_path %></li>
 	    <% if current_member %>
 	      <li <% if params[:controller]=="devise/sessions" && params[:action]=="destroy" %>class="current_page_item"<% end %>><%= link_to 'Logout', destroy_member_session_path %></li>
 	    <% else %>
