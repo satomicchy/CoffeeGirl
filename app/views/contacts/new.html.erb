@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "contacts" %>
+
 <h1>Contact</h1>
 <%= form_for(@contact) do |f| %>
   <table>
@@ -8,8 +10,8 @@
       <th>メールアドレス</th><td><%= f.text_field :email %></td>
     </tr>
     <tr>
-      <th>名前</th><td><%= f.text_field :name %></td>
+      <th>お名前</th><td><%= f.text_field :name %></td>
     </tr>
+    <th></th><td><%= f.submit '送信' %></td>
   </table>
-  <%= f.submit '送信' %>
 <% end %>
