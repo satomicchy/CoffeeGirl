@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 class Mailer < ActionMailer::Base
-  default from: "from@example.com"
+  default to: "girl.meets.coffee@gmail.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -7,10 +8,10 @@ class Mailer < ActionMailer::Base
   #   en.mailer.contact.subject
   #
   def contact(input)
-    @body = input[:body]
+    @letter = input[:letter]
     @email = input[:email]
     @name = input[:name]
 
-    mail to: "satomi.t.sora@gmail.com", subject: "from Coffee web site"
+    mail from: "#{@email}", subject: "#{@name} さんからメッセージが届いています。(Coffee女子会サイトより)"
   end
 end

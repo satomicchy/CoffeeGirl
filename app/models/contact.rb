@@ -6,5 +6,5 @@ class Contact
     false
   end
 
-  attr_accessor :body, :email, :name    
+  attr_accessor :letter, :email, :name    
 end
