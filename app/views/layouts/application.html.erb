@@ -30,7 +30,7 @@ Released   : 20100529
 	</div>
 	<div id="menu">
 	  <ul>
-	    <li <% if params[:controller]=="reports" && params[:action]=="index" %>class="current_page_item"<% end %>><%= link_to 'Home', reports_path %></li>
+	    <li <% if params[:controller]=="reports" && params[:action]=="index" %>class="current_page_item"<% end %>><%= link_to 'Top', coming_event_events_path %></li>
 	    <li <% if params[:controller]=="welcome" && params[:action]=="about" %>class="current_page_item"<% end %>><%= link_to 'About', welcome_about_path %></li>
 	    <li <% if params[:controller]=="contacts" && params[:action]=="new" %>class="current_page_item"<% end %>><%= link_to 'Contact', new_contact_path %></li>
 	    <% if current_member %>
@@ -65,13 +65,14 @@ Released   : 20100529
 	      </li>
 	      <li>
 		<h2>Coffee女子会へようこそ！</h2>
-		<p>CoffeeとCoffeeScriptが好きな女子onlyの会です。一緒にCoffeeいかがですか？</p>
+		<p>CoffeeとCoffeeScriptがキーワードの女子onlyの会です。一緒にCoffeeいかがですか？</p>
 	      </li>
 	      <li>
 		<h2>Categories</h2>
 		<ul>
 		  <li><%= link_to '次のイベント', coming_event_events_path %></li>
-		  <li><%= link_to 'これまでやってきたことと、予定と', events_path %></li>
+		  <li><%= link_to 'これまでやってきたことと予定', events_path %></li>
+		  <li><%= link_to '今までのレポート', reports_path %></li>
 		  <li><%= link_to 'Coffeeスポット', coffeespots_path%></li>
 		  <li><%= link_to 'メンバー', members_path %></li>
 		</ul>
