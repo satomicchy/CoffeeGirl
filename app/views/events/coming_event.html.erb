@@ -1,40 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-<%= image_tag ("img01_left.jpg")%>&nbsp;&nbsp;<%= link_to '一覧に戻る', events_path %>
-<% if current_member %>
-  &nbsp;|&nbsp;
-  <%= link_to '[このイベントの編集]', edit_event_path(@event) %>
-<% end %>
-</p>
+<h1>次のイベント予定</h1>
 
-<p>
-  <b>タイトル：</b>
-  <%= @event.title %>
-</p>
+  <p>
+    <% if current_member %>
+      &nbsp;|&nbsp;
+      <%= link_to '[このイベントの編集]', edit_event_path(@event) %>
+    <% end %>
+  </p>
 
-<p>
-  <b>日時：</b>
-  <%= @event.date_on.strftime("%Y/%m/%d-%H:%M") %>&nbsp;から
-  <%= @event.end_at.strftime("%Y/%m/%d-%H:%M") %>&nbsp;まで
-</p>
+  <p>
+    <b>タイトル：</b>
+    <%= @event.title %>
+  </p>
 
-<p>
-  <b>内容：</b>
-  <%= @event.information %>
-</p>
+  <p>
+    <b>日時：</b>
+    <%= @event.date_on.strftime("%Y/%m/%d-%H:%M") %>&nbsp;から
+    <%= @event.end_at.strftime("%Y/%m/%d-%H:%M") %>&nbsp;まで
+  </p>
 
-<p>
-  <b>Coffeespot：</b>
-  <% unless @event.coffeespot_id.blank? %>
-    <%= @event.coffeespot.name %>
-  <% end %>
-</p>
+  <p>
+    <b>内容：</b>
+    <%= @event.information %>
+  </p>
 
-<p>
-  <b>参加登録：</b>
-  <a href="<%= @event.registry_url %>" target="_blank"><%= @event.registry_url %></a>
+  <p>
+    <b>Coffeespot：</b>
+    <% unless @event.coffeespot_id.blank? %>
+      <%= @event.coffeespot.name %>
+    <% end %>
+  </p>
+
+<% unless @event.date_on < Time.now %>
+  <p>
+    <b>参加登録：</b>
+    <a href="<%= @event.registry_url %>" target="_blank"><%= @event.registry_url %></a>
   </br>
   </br>
   <%= image_tag ("irasuto08.gif") %>&nbsp;&nbsp;<b>Coming soon!</b>
+  </p>
+<% else %>
+  <p>
+    このイベントは終了しました。<br />
+    次のイベントはまだ決まっていません。ちょっとお待ちください。
+  </p>
+<% end %>
+
+<p>
+  <%= image_tag ("img01_left.jpg")%>&nbsp;&nbsp;<%= link_to '今までのイベントを見る', events_path %>
 </p>

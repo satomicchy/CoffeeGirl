@@ -30,7 +30,7 @@ Released   : 20100529
 	</div>
 	<div id="menu">
 	  <ul>
-	    <li <% if params[:controller]=="reports" && params[:action]=="index" %>class="current_page_item"<% end %>><%= link_to 'Top', coming_event_events_path %></li>
+	    <li <% if params[:controller]=="events" && params[:action]=="coming_event" %>class="current_page_item"<% end %>><%= link_to 'Top', coming_event_events_path %></li>
 	    <li <% if params[:controller]=="welcome" && params[:action]=="about" %>class="current_page_item"<% end %>><%= link_to 'About', welcome_about_path %></li>
 	    <li <% if params[:controller]=="contacts" && params[:action]=="new" %>class="current_page_item"<% end %>><%= link_to 'Contact', new_contact_path %></li>
 	    <% if current_member %>
@@ -72,7 +72,7 @@ Released   : 20100529
 		<ul>
 		  <li><%= link_to '次のイベント', coming_event_events_path %></li>
 		  <li><%= link_to 'これまでやってきたことと予定', events_path %></li>
-		  <li><%= link_to '今までのレポート', reports_path %></li>
+		  <li><%= link_to 'これまでのレポート', reports_path %></li>
 		  <li><%= link_to 'Coffeeスポット', coffeespots_path%></li>
 		  <li><%= link_to 'メンバー', members_path %></li>
 		</ul>
