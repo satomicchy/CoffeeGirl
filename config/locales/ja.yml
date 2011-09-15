@@ -211,7 +211,7 @@ ja:
       odd: "は奇数にしてください。"
       even: "は偶数にしてください。"
 
-  activerecord:
+  activerecord: &activerecord
     errors:
       template:
         header:
@@ -226,3 +226,12 @@ ja:
 
       full_messages:
         format: "%{attribute}%{message}"
+
+    attributes:
+      contact:
+        letter: "本文"
+        email: "メールアドレス"
+        name: "お名前"
+
+  activemodel:
+    <<: *activerecord
