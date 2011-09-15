@@ -15,8 +15,8 @@
 
 <p>
   <b>日時：</b>
-  <%= @event.date_on.strftime("%Y/%m/%d-%H:%M") %>&nbsp;から
-  <%= @event.end_at.strftime("%Y/%m/%d-%H:%M") %>&nbsp;まで
+  <%= @event.date_on.strftime("%Y/%m/%d - %H:%M") %>&nbsp;から
+  <%= @event.end_at.strftime("%Y/%m/%d - %H:%M") %>&nbsp;まで
 </p>
 
 <p>
@@ -37,7 +37,7 @@
     <a href="<%= @event.registry_url %>" target="_blank"><%= @event.registry_url %></a>
   </p>
 <% else %>
-  <b>このイベントは終了しました。</b>&nbsp;<%= image_tag ("irasuto06.gif") %>
+  このイベントは終了しました。&nbsp;<%= image_tag ("irasuto06.gif") %>
 <% end %>
 
 </br>
