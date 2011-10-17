@@ -126,7 +126,7 @@ a:hover {
 #search form {
 	height: 41px;
 	margin: 0;
-	padding: 10px 0 0 20px;
+	padding: 0px 0 0 0px;
 }
 
 #search fieldset {

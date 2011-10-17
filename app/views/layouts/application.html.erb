@@ -25,7 +25,7 @@ Released   : 20100529
     <div id="header-wrapper">
       <div id="header">
 	<div id="logo">
-	  <h1><a href="#">Coffee<span>Script</span></a></h1>
+	  <h1><a href="/events/coming_event">Coffee<span>Script</span></a></h1>
 	  <p> produced by <a>coffee女子会</a></p>
 	</div>
 	<div id="menu">
@@ -54,12 +54,39 @@ Released   : 20100529
 	    <ul>
 	      <li>
 		<div id="search" >
-		  <form method="get" action="#">
 		    <div>
-		      <input type="text" name="s" id="search-text" value="" />
-		      <input type="submit" id="search-submit" value="GO" />
+
+                      <div id="cse-search-form" style="width: 100%;">Loading</div>
+                      <script src="//www.google.com/jsapi" type="text/javascript"></script>
+                      <script type="text/javascript"> 
+                        google.load('search', '1', {language : 'ja'});
+                        google.setOnLoadCallback(function() {
+                        var customSearchControl = new google.search.CustomSearchControl('012591741912598237318:qwf7ne0v_xm');
+                        customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                        var options = new google.search.DrawOptions();
+                        options.enableSearchboxOnly("/welcome/search", "queries");
+                        customSearchControl.draw('cse-search-form', options);
+                        }, true);
+                      </script>
+                      <style type="text/css">
+                        .gsc-search-box td{
+                        padding: 0px;
+                        }
+                        input.gsc-input {
+                        width: 180px;
+                        height: 24px;
+                        border-color: #DEDEDE;
+                        }
+                        input.gsc-search-button {
+                        height: 24px;
+                        font-size: 14px;
+                        color: #FFFFFF;
+                        border-color: #FA4100;
+                        background-color: #FA4100;
+                        }
+                      </style>
+
 		    </div>
-		  </form>
 		</div>
 		<div style="clear: both;">&nbsp;</div>
 	      </li>
