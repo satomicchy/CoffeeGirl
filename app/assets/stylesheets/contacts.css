@@ -1,8 +1,8 @@
-th{
+#contact_table th{
     text-align: right;
 }
 
-td{
+#contact_table td{
     text-align: left;
 }
 

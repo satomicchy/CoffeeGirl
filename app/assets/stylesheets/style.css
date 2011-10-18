@@ -22,11 +22,11 @@ h1, h2, h3 {
 }
 
 h1 {
-	font-size: 2em;
+	font-size: 1.8em;
 }
 
 h2 {
-	font-size: 2em;
+	font-size: 1.8em;
 }
 
 h3 {
@@ -350,7 +350,7 @@ td {
 	padding-left: 30px;
 	text-align: right;
 	letter-spacing: -.5px;
-	font-size: 1.8em;
+	font-size: 1.7em;
 }
 
 #sidebar p {

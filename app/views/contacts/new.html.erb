@@ -3,7 +3,7 @@
 <h1>Contact</h1>
 <%= form_for(@contact) do |f| %>
   <% unless @contact.errors.full_messages.blank? %><%= @contact.errors.full_messages %><% end %>
-  <table>
+  <table id="contact_table">
     <tr>
       <th>本文</th><td><%= f.text_area :letter %></td>
     </tr>
