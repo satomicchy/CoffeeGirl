@@ -9,8 +9,7 @@
   <tr>
     <th>お店の名前</th>
     <th>住所</th>
-    <th>URL</th>
-    <th>Memo</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -20,8 +19,7 @@
   <tr>
     <td><%= coffeespot.name %></td>
     <td><%= coffeespot.address %></td>
-    <td><%= coffeespot.url %></td>
-    <td><%= coffeespot.memo %></td>
+    <td><%= image_tag ("img01.jpg")%>&nbsp;&nbsp;<%= link_to '詳細', coffeespot %></td>
     <% if current_member %>
       <td><%= link_to 'Edit', edit_coffeespot_path(coffeespot) %></td>
       <td><%= link_to 'Destroy', coffeespot, confirm: 'Are you sure?', method: :delete %></td>

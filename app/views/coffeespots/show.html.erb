@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<%= image_tag ("img01_left.jpg")%>&nbsp;&nbsp;<%= link_to '一覧に戻る', coffeespots_path %>
+<% if current_member %>
+  &nbsp;|&nbsp;
+  <%= link_to '[このCoffeeSpotの編集]', edit_coffeespot_path(@coffeespot) %>
+<% end %>
+</p>
+
+<p>
+  <b>お店の名前：</b>
+  <%= @coffeespot.name %>
+</p>
+
+<p>
+  <b>住所：</b>
+  <%= @coffeespot.address %>
+</p>
+
+<p>
+  <b>URL：</b>
+  <%= @coffeespot.url %>
+</p>
+
+<p>
+  <b>Memo：</b>
+  <%= @coffeespot.memo %>
+</p>
+
+<p>
+  <%= image_tag ("irasuto07.gif") %>
+</p>
