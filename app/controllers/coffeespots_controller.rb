@@ -1,5 +1,5 @@
 class CoffeespotsController < ApplicationController
-  before_filter :authenticate_member!, :except => [:index]
+  before_filter :authenticate_member!, :except => [:index, :show]
 
   # GET /coffeespots
   # GET /coffeespots.json
