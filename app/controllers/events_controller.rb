@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_filter :authenticate_member!, :except => [:index, :show, :coming_event]
 
   def coming_event
-    @event = Event.order("date_on ASC").first
+    @event = Event.order("date_on").last
   end
 
   # GET /events
