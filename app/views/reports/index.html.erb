@@ -2,16 +2,18 @@
 
 <% @reports.each do |report| %>
   <div class="post">
-    <h2 class="title"><%= link_to report.event.title, report.event %></h2>
-    <p class="meta"><span class="date"><%= report.created_at.strftime("%Y, %m, %d") %></span><span class="posted">Posted by <a><%= report.member.name %></a></span></p>
-    <div style="clear: both;">&nbsp;</div>
+    <h3 class="title"><%= link_to report.event.title, report.event %></h3>
+    <div class="meta">
+      <span class="posted">Posted by&nbsp;<%= report.member.name %></span>
+      <span class="date"><%= report.created_at.strftime("%Y, %m, %d") %></span>
+    </div>
     <div class="entry">
-      <div class="report_area">
-	<p><%= report.report %></p>
+      <div class="report_area" id="<%= "report_area" + report.id.to_s %>">
+	<%= simple_format(report.report) %>
       </div>
-      <p class="links">
+      <div class="links">
 	<%= link_to 'Read More', report_path(report), :onClick => "return false", :class => "read_more" %>
-      </p>
+      </div>
     </div>
   </div>
 <% end %>
