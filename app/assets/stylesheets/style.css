@@ -285,11 +285,11 @@ td {
 }
 
 .date {
-	float: left;
+	float: right;
 }
 
 .posted {
-	float: right;
+	float: left;
 	font-size: 11px;
 }
 

@@ -1,8 +1,12 @@
 <p>
+  <%= image_tag ("img01_left.jpg")%>&nbsp;&nbsp;<%= link_to 'イベントに戻る', event_path(@event) %>
+</p>
+
+<p>
   <b>タイトル：</b><%= @event.title %>
 </p>
 <p>
-  <b>日時：</b><%= @event.date_on %>
+  <b>日時：</b><%= @event.date_on.strftime("%Y/%m/%d-%H:%M") %>&nbsp;より
 </p>
 
 <%= form_for([@event, @report]) do |f| %>

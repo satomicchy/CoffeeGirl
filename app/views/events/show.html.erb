@@ -49,28 +49,26 @@
 </br>
 <p>
   <b>レポート：</b>
+  <% if current_member %>
+    <%= link_to '[新しくレポートを書く]', new_event_report_path(@event) %>
+  <% end %>
 </p>
-
-<% if current_member %>
-  <%= link_to '[新しくレポートを書く]', new_event_report_path(@event) %>
-<% end %>
 
 <% if @reports.blank? %>
   <p>レポートはまだです。ごめんなさい。<%= image_tag ("irasuto07.gif") %></p>
-<% end %>
-
-<% @reports.each do |report| %>
-  <span class="date"><%= report.created_at.strftime("%Y, %m, %d") %></span>
-  <span class="posted">Posted by<a><%= report.member.name %></a></span>
-  <p class="entry">
-    <br />
-    <%= report.report %>
-  </p>
-  <p>
-    <% if current_member %>
-      <%= link_to 'Edit', edit_event_report_path(report.event_id, report) %>&nbsp;&nbsp;&nbsp;&nbsp;
-      |&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= link_to 'Destroy', event_report_path(report.event_id, report), confirm: 'Are you sure?', method: :delete %>
-    <% end %>
-  </p>
+<% else %>
+  <% @reports.each do |report| %>
+    <p>
+      <span class="posted">Posted by&nbsp;<%= report.member.name %></span>
+      <span class="date"><%= report.created_at.strftime("%Y, %m, %d") %></span>
+      <br />
+      <%= simple_format(report.report) %>
+      <% if current_member && report.member_id == current_member.id %>
+        このレポートの・・・
+        <%= link_to '[編集]', edit_event_report_path(report.event_id, report) %>&nbsp;&nbsp;&nbsp;&nbsp;
+        |&nbsp;&nbsp;&nbsp;&nbsp;
+        <%= link_to '[削除]', event_report_path(report.event_id, report), confirm: 'Are you sure?', method: :delete %>
+      <% end %>
+    </p>
+  <% end %>
 <% end %>
