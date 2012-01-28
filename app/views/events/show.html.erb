@@ -1,11 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h1>Event</h1>
 
 <p>
-<%= image_tag ("img01_left.jpg")%>&nbsp;&nbsp;<%= link_to '一覧に戻る', events_path %>
-<% if current_member %>
-  &nbsp;|&nbsp;
-  <%= link_to '[このイベントの編集]', edit_event_path(@event) %>
-<% end %>
+  <%= image_tag ("img01_left.jpg")%>&nbsp;&nbsp;<%= link_to 'イベント一覧', events_path %>
+  <% if current_member %>
+    &nbsp;|&nbsp;
+    <%= link_to '[このイベントの編集]', edit_event_path(@event) %>
+  <% end %>
 </p>
 
 <p>
@@ -16,7 +16,11 @@
 <p>
   <b>日時：</b>
   <%= @event.date_on.strftime("%Y/%m/%d - %H:%M") %>&nbsp;から
-  <%= @event.end_at.strftime("%Y/%m/%d - %H:%M") %>&nbsp;まで
+  <% if @event.date_on.day == @event.end_at.day %>
+    <%= @event.end_at.strftime("%H:%M") %>&nbsp;まで
+  <% else %>
+    <%= @event.end_at.strftime("%Y/%m/%d - %H:%M") %>&nbsp;まで
+  <% end %>
 </p>
 
 <p>
@@ -47,11 +51,9 @@
   <b>レポート：</b>
 </p>
 
-<p>
 <% if current_member %>
   <%= link_to '[新しくレポートを書く]', new_event_report_path(@event) %>
 <% end %>
-</p>
 
 <% if @reports.blank? %>
   <p>レポートはまだです。ごめんなさい。<%= image_tag ("irasuto07.gif") %></p>

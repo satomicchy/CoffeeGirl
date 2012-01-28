@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-<%= image_tag ("img01_left.jpg")%>&nbsp;&nbsp;<%= link_to '一覧に戻る', coffeespots_path %>
+<%= image_tag ("img01_left.jpg")%>&nbsp;&nbsp;<%= link_to 'Coffeespot一覧', coffeespots_path %>
 <% if current_member %>
   &nbsp;|&nbsp;
   <%= link_to '[このCoffeeSpotの編集]', edit_coffeespot_path(@coffeespot) %>

@@ -2,6 +2,7 @@
 
 <% if @event %>
   <p>
+    <%= image_tag ("img01_left.jpg")%>&nbsp;&nbsp;<%= link_to 'イベント一覧', events_path %>
     <% if current_member %>
       &nbsp;|&nbsp;
       <%= link_to '[このイベントの編集]', edit_event_path(@event) %>
@@ -16,7 +17,11 @@
   <p>
     <b>日時：</b>
     <%= @event.date_on.strftime("%Y/%m/%d-%H:%M") %>&nbsp;から
-    <%= @event.end_at.strftime("%Y/%m/%d-%H:%M") %>&nbsp;まで
+  <% if @event.date_on.day == @event.end_at.day %>
+    <%= @event.end_at.strftime("%H:%M") %>&nbsp;まで
+  <% else %>
+    <%= @event.end_at.strftime("%Y/%m/%d - %H:%M") %>&nbsp;まで
+  <% end %>
   </p>
 
   <p>

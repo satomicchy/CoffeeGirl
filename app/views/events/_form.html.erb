@@ -1,3 +1,11 @@
+<p>
+  <%= image_tag ("img01_left.jpg")%>&nbsp;&nbsp;<%= link_to 'イベント一覧', events_path %>
+  <% if request.path_parameters[:action] == "edit" %>
+    &nbsp;|&nbsp;
+    <%= link_to '詳細に戻る', @event %>
+  <% end %>
+</p>
+
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
