@@ -1,7 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h1>次のイベント予定</h1>
 
+<% if @event %>
   <p>
     <% if current_member %>
       &nbsp;|&nbsp;
@@ -50,3 +49,7 @@
 <p>
   <%= image_tag ("img01_left.jpg")%>&nbsp;&nbsp;<%= link_to '今までのイベントを見る', events_path %>
 </p>
+
+<% else %>
+  登録されているイベントはありません。乞うご期待！&nbsp;<%= image_tag ("irasuto06.gif") %>
+<% end %>
