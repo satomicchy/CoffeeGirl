@@ -1,19 +1,21 @@
 <h1>これまでのイベントレポート</h1>
 
-<% @reports.each do |report| %>
+<% @reports.each do |event, reports| %>
   <div class="post">
-    <h3 class="title"><%= link_to report.event.title, report.event %></h3>
-    <div class="meta">
-      <span class="posted">Posted by&nbsp;<%= report.member.name %></span>
-      <span class="date"><%= report.created_at.strftime("%Y, %m, %d") %></span>
-    </div>
-    <div class="entry">
-      <div class="report_area" id="<%= "report_area" + report.id.to_s %>">
-	<%= simple_format(report.report) %>
+    <h3 class="title"><%= link_to event.title, event_path(event) %></h3>
+    <% reports.each do |report| %>
+      <div class="meta">
+        <span class="posted">Posted by&nbsp;<%= report.member.name %></span>
+        <span class="date"><%= report.created_at.strftime("%Y, %m, %d") %></span>
       </div>
-      <div class="links">
-	<%= link_to 'Read More', report_path(report), :onClick => "return false", :class => "read_more" %>
+      <div class="entry">
+        <div class="report_area" id="<%= "report_area" + report.id.to_s %>">
+	  <%= simple_format(report.report) %>
+        </div>
+        <div class="links">
+	  <%= link_to 'Read More', report_path(report), :onClick => "return false", :class => "read_more" %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 <% end %>
