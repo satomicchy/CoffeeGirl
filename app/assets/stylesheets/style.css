@@ -364,6 +364,16 @@ td {
 	color: #FF3000;
 }
 
+#sidebar #facebook-button {
+        width: 120px;
+        float: right;
+}
+
+#sidebar #twitter-button {
+        width: 130px;
+        float: right;
+}
+
 /* Footer */
 
 #footer {
